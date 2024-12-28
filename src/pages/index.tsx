@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import PokemonCard from "../components/PokemonCard";
-import usePokemon from "../hooks/usePokemon"; // Correct the import path if needed
+import usePokemon from "../hooks/usePokemon"; 
 import Pagination from "../components/Pagination";
 import Modal from "../components/Modal";
 
@@ -19,7 +19,6 @@ const Home: React.FC = () => {
       const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
       const data = await response.json();
 
-      // Structured sample data
       const formattedData = {
         name: data.name,
         image: `https://img.pokemondb.net/artwork/large/${data.name}.jpg`,
@@ -40,12 +39,12 @@ const Home: React.FC = () => {
 
   const handlePokemonClick = (name: string) => {
     setSelectedPokemon(name);
-    fetchPokemonDetails(name); // Fetch detailed data when a Pokémon is clicked
+    fetchPokemonDetails(name); 
   };
 
   const closeModal = () => {
     setSelectedPokemon(null);
-    setPokemonDetails(null); // Clear details when closing the modal
+    setPokemonDetails(null); 
   };
 
   return (
@@ -108,5 +107,5 @@ const Home: React.FC = () => {
 };
 
 export default Home;
-// -----------------------------------
+// ----------------------------------- Baad me dekhna hai isko ek aur baar sahi se fetch ni ho rha pata nahi kyu 😢😢
 

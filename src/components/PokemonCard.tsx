@@ -29,12 +29,11 @@ const PokemonCard: React.FC<{ name: string; image: string; onClick: () => void }
     <motion.div
       className="pokemon-card"
       whileHover={{
-        scale: 1.05, // Scale up the card when hovered
-        boxShadow: "0px 10px 20px rgba(0,0,0,0.2)", // Add shadow on hover
-        transition: { duration: 0.3 }, // Smooth transition
+        scale: 1.05, 
+        boxShadow: "0px 10px 20px rgba(0,0,0,0.2)", 
+        transition: { duration: 0.3 }, 
       }}
-      whileTap={{ scale: 0.95 }} // Slight scale down when clicked
-      onClick={onClick}
+      whileTap={{ scale: 0.95 }} 
     >
       <img src={image || placeholderImage} alt={name} />
       <h3>{name}</h3>

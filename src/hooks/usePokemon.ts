@@ -1,24 +1,11 @@
 // import { useState, useEffect } from "react";
-// import { fetchPokemon } from "../utils/fetchPokemon";
 
-// const API_URL = "https://pokeapi.co/api/v2/pokemon";
 
-// export const usePokemon = (page: number, limit: number) => {
-//   const [pokemonList, setPokemonList] = useState([]);
-//   const [loading, setLoading] = useState(false);
-//   const [error, setError] = useState("");
 
 //   useEffect(() => {
 //     const fetchData = async () => {
 //       setLoading(true);
-//       try {
-//         const offset = (page - 1) * limit;
-//         const data = await fetchPokemon(`${API_URL}?offset=${offset}&limit=${limit}`);
-//         setPokemonList(data.results);
-//       } catch (err) {
-//         setError("Failed to fetch Pokémon");
-//       } finally {
-//         setLoading(false);
+//      );
 //       }
 //     };
 //     fetchData();
@@ -40,7 +27,7 @@ const usePokemon = (page: number) => {
 
     const fetchPokemonData = async () => {
       try {
-        const offset = (page - 1) * 20; // 20 Pokémon per page
+        const offset = (page - 1) * 20; 
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=20&offset=${offset}`);
         const data = await response.json();
         setPokemonList(data.results);
@@ -52,7 +39,7 @@ const usePokemon = (page: number) => {
     };
 
     fetchPokemonData();
-  }, [page]); // Re-fetch when page number changes
+  }, [page]); 
 
   return { pokemonList, loading, error };
 };
