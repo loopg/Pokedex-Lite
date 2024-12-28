@@ -36,4 +36,12 @@ npm start
 #### Open the application
 Open your browser and go to: http://localhost:3000
 
- 
+
+## Problems I faced 
+ When I click on a specific pokemon  card it opens a small floating page but the image was not fitting in the page and it was non responsive.I handled it with CSS .
+
+ adding annimation to the pages were quite difficult .
+
+ I added O auth login function but I wanted to make it easy running after deployment so I removed that feature .
+ Because this website will be  mostly used by children so they do not need to login to access there favourite pokemon 😂 . 
+
