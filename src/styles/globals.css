@@ -1,0 +1,205 @@
+/* General Body and Container Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif; /* Use a modern font */
+    background-color: #f7f7f7;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Grid Styling */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    transition: grid-template-columns 0.3s ease-in-out;
+}
+
+/* Pokémon Card Styling */
+.pokemon-card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.2s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.pokemon-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Pokémon Image Styling */
+.pokemon-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.pokemon-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Pokémon Card Title */
+.pokemon-card h3 {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #333;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+/* Pagination Button Styling */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin: 0 5px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pagination button:hover {
+    background-color: #2980b9;
+}
+
+/* Modal Styling */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Modal Content Styling */
+.modal-content {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 450px;
+    max-height: 80vh;
+    text-align: center;
+    overflow-y: auto;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    animation: scaleUp 0.3s ease-in-out;
+    position: relative;
+}
+
+/* Modal Content Image Styling */
+.modal-content img {
+    width: 150px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+/* Close Button Styling */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.close-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Modal Text */
+.modal-content h1, .modal-content p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.modal-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.modal-content li {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+/* Hover Effect for Modal Content */
+.modal-content:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust grid for smaller screens */
+    }
+
+    .pokemon-card img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .modal-content {
+        padding: 15px;
+    }
+
+    .modal-content h1 {
+        font-size: 20px;
+    }
+
+    .close-btn {
+        top: 15px;
+        right: 15px;
+    }
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(0.9);
+    }
+    to {
+        transform: scale(1);
+    }
+}
